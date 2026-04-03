@@ -1,6 +1,6 @@
 -- 1. Tabela de Usuários (Adaptada para OAuth2)
 CREATE TABLE users (
-    id              UUID NOT NULL DEFAULT gen_random_uuid(),
+    id              UUID NOT NULL DEFAULT random_uuid(),
     username        VARCHAR(150) NOT NULL UNIQUE,
     email           VARCHAR(255) NOT NULL UNIQUE,
     password        VARCHAR(255),

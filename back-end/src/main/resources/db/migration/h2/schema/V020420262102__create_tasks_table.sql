@@ -1,5 +1,5 @@
 CREATE TABLE tasks (
-    id              UUID NOT NULL DEFAULT gen_random_uuid(),
+    id              UUID NOT NULL DEFAULT random_uuid(),
     title           VARCHAR(200) NOT NULL,
     description     TEXT,
     position        INT NOT NULL,
@@ -8,7 +8,7 @@ CREATE TABLE tasks (
     category_id     INT,
     created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
-    PRIMARY KEY(id),
+    PRIMARY KEY (id),
     FOREIGN KEY (column_id) REFERENCES columns(id) ON DELETE CASCADE,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE SET NULL
